@@ -1,0 +1,30 @@
+$contentMaxWidth: 1280px;
+$contentHeight: 800px;
+
+body {
+  font-family: 'Kameron', 'Noto Sans JP', sans-serif;
+  background-color: #efefef;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+  display: flex;
+  flex-direction: row;
+}
+.graph_column{
+  flex-basis: 35%;
+  height: $contentHeight;
+}
+.plotly_graph{
+  margin: 0 auto;
+  height: 50%;
+  flex-basis: 35%;
+}
+.plotly_map{
+  margin: 0;
+  flex-basis: 65%;
+  height: $contentHeight;
+}
+
