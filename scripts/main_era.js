@@ -5,6 +5,7 @@ const months = Array.from(new Array(Nm)).map((v,i) => 1 + i);
 
 const years5 = ['1983-06','1988-06','1993-06','1998-06','2003-06','2008-06','2013-06','2018-06'];
 const Ny5 = years5.length;
+const data_url = "https://raw.githubusercontent.com/Norte06/Past-Climate/master/data/ERA5/"
 
 const config_graph = {
   responsive: true,
@@ -36,7 +37,7 @@ function calc_climatology_5year(data,N){
   return clim;
 };
 
-const data_fname = '/data/ERA5/temp_monthly_1981-2020_0p1deg_japan.csv';
+const data_fname = data_url + 'temp_monthly_1981-2020_0p1deg_japan.csv';
 
 Plotly.d3.csv(data_fname, function(err,rows){
   const row_keys = Object.keys(rows[0]);
@@ -49,9 +50,10 @@ Plotly.d3.csv(data_fname, function(err,rows){
 
   function plot_map(chosenMonth){
     let temp_Data = unpack(rows,chosenMonth);
+    let geojson_url = data_url + "grid_geometry_0p1deg_japan.geojson";
     const data_map = [{
       type: "choroplethmapbox",
-      geojson: "/data/ERA5/grid_geometry_0p1deg_japan.geojson",
+      geojson: geojson_url,
       locations: unpack(rows,'fips'),
       z: temp_Data,
       colorscale: "Portland",

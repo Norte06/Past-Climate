@@ -1,6 +1,7 @@
 # Past-Climate
 日本の過去の気候について、再解析データERA5と気象庁の観測データを可視化するウェブサイトのコード。
-[URL](https://Norte06.github.io/Past-Climate/index.html)
+
+[Github Pages](https://Norte06.github.io/Past-Climate/index.html)
 
 ## データ
 - [気象庁ホームページ 過去気象データ](https://www.data.jma.go.jp/gmd/risk/obsdl/index.php)
