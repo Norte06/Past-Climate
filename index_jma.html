@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本の気候の変遷（観測データ編）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bootstrap-reboot.css" />
+  <link rel="stylesheet" href="styles/style_jma.css" />
+</head>
+<body>
+  <div id="global-container">
+    <div id="container">
+      <header class="header">
+
+      </header>
+
+      <div id="content">
+        <section class="intro_sec">
+          <div class="intro__inner">
+            <h1 class="page_title">日本の気候の変遷（観測データ編）</h1>
+            <p class="menu">
+              <a href="index.html">シミュレーション編</a>　／　観測データ編
+            </p>  
+            <p class="page_descript">
+              気象庁が記録した観測データから、日本の気候の40年間の変遷を可視化します。<br>
+              40年間の月ごとの気候を可視化できます。地図をクリックすると、その地点の気候の変遷が左のグラフに表示されます（初期値は京都）。
+            </p>
+          </div>
+        </section>
+
+        <section class="graph_sec">
+          <div class="graph__inner">
+            <div class="graph__inner__left">
+              <div id='location_str' class='location_description'></div>
+              <div id="plot_temp_stripe"></div>
+              <div id="plot_temp_yearly"></div>
+              <div id="plot_temp30days_yearly"></div>
+              <div id="plot_temp_monthly"></div>
+            </div>
+
+            <div class="graph__inner__right">
+              <div id="plot_map" class="right__map"></div>
+              <div class="right__graphs">
+                <div id="plot_prep_yearly" class="right__cell"></div>
+                <div id="plot_wind_yearly" class="right__cell"></div>
+                <div id="plot_rain50days_yearly" class="right__cell"></div>
+                <div id="plot_snow_yearly" class="right__cell"></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        
+      <section class="description_sec">
+        <div class="description__inner">
+          <h2>使用データ: 気象庁の過去気象データ</h2>
+          <p class="description">
+            気象庁のウェブサイト「過去の気象データ・ダウンロード」から取得した、月ごとのデータを加工（合計・平均）して掲載しています。<br>
+            各都道府県の都道府県庁所在地＋αの地点についてデータが見られます。<br>
+          </p>
+          <p class="description">
+            データ： <a href="https://www.data.jma.go.jp/gmd/risk/obsdl/index.php" target="_blank" rel="noopener noreferrer">気象庁ホームページ 過去気象データ</a>を加工して作成<br>
+            Warming Stripe: レディング大学教授 Ed Hawkins<a href="https://showyourstripes.info/" target="_blank" rel="noopener noreferrer">「Show Your Stripes」</a>を参照
+          </p>
+          <h2>このウェブサイトについて</h2>
+          <p class="description">
+            日本の気候変動／地球温暖化について少しでも理解を深めてもらおうという意図で作りました。<br>
+            気候変動／地球温暖化と一言で言っても、場所によってその変化は様々であることを感じてみて下さい。<br>
+            このようなウェブサイト作成にご関心がある方は、<a href="https://github.com/Norte06/Past-Climate" target="_blank">Github</a>でコードも公開しているのでご参照下さい。
+          </p>
+          <h2>気候変動／地球温暖化についてさらに知りたい方へ</h2>
+          <p class="description">
+            信頼できるデータが掲載されているウェブサイトを紹介します。
+            <ul>
+              <li><a href="https://adaptation-platform.nies.go.jp/map/index.html" target="_blank" rel="noopener noreferrer">気候変動適応情報プラットフォーム 気候変動の観測・予測データ</a></li>
+              <li><a href="https://www.data.jma.go.jp/cpdinfo/index_temp.html" target="_blank" rel="noopener noreferrer">気象庁 地球温暖化情報ポータルサイト</a></li>
+              <li><a href="https://www.jccca.org/oyakudachi/download-list" target="_blank" rel="noopener noreferrer">全国地球温暖化防止活動推進センター</a></li>
+            </ul>
+          </p>
+        </div>
+      </section>
+
+      <section class="footer_sec">
+        <div class="footer__inner">
+          <p class="author">
+            作者：Yuki Kita（<a href="https://twitter.com/0617north" target="_blank" rel="noopener noreferrer">Twitter</a>）
+          </p>
+          <p class="github">
+            <a href="https://github.com/Norte06/Past-Climate" target="_blank" rel="noopener noreferrer">Githubレポジトリ</a>
+          </p>
+          <p class="copyright">
+            &copy; 2021 Yuki Kita.
+          </p>
+        </div>
+      </section>
+
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="scripts/main_jma.js"></script>
+</body>
+</html>

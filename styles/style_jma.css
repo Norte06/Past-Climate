@@ -1,0 +1,194 @@
+body {
+  font-family: 'Noto Sans JP', 'Kameron', sans-serif;
+  background-color: #EEEEEE;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1280px;
+  background-color: white;
+}
+
+.intro__inner {
+  width: 100%;
+  height: 160px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.intro__inner .menu {
+  margin: 8px auto;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.intro__inner .page_descript {
+  font-size: 1em;
+  margin: 8px 12px;
+}
+
+.graph__inner {
+  display: block;
+  height: 950px;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+}
+
+.graph__inner__left {
+  float: left;
+  width: 34%;
+}
+
+.graph__inner__left .location_description {
+  height: 50px;
+  padding: 10px;
+  background-color: white;
+  font-size: 1.4em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.graph__inner__right {
+  float: right;
+  width: 66%;
+  display: block;
+}
+
+.graph__inner__right .right__map {
+  width: 100%;
+}
+
+.graph__inner__right .right__graphs {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.graph__inner__right .right__graphs .right__cell {
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+}
+
+.description_sec {
+  width: 100%;
+  margin: 10px auto;
+  padding: 0;
+  background-color: white;
+  display: block;
+}
+
+.description_sec .description__inner {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px 10px 10px 10px;
+}
+
+.description_sec .description {
+  padding-bottom: 12px;
+}
+
+.footer_sec {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #303030;
+  color: white;
+}
+
+.footer_sec .footer__inner {
+  margin: 0px auto;
+  padding: 0px auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer_sec .footer__inner .author, .footer_sec .footer__inner .github {
+  width: 25%;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.footer_sec .footer__inner .copyright {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+  color: #9b9b9b;
+  font-size: 0.8em;
+}
+
+.footer_sec a {
+  color: #A9F5F2;
+}
+
+.footer_sec a :hover {
+  text-decoration: underline;
+}
+
+#plot_temp_stripe {
+  width: 100%;
+  height: 100px;
+}
+
+#plot_temp_yearly,
+#plot_temp30days_yearly,
+#plot_temp_monthly {
+  width: 100%;
+  height: 265px;
+}
+
+#plot_map {
+  width: 100%;
+  height: 440px;
+  margin: 0px auto;
+  padding: 0px auto;
+}
+
+#plot_prep_yearly,
+#plot_wind_yearly,
+#plot_rain50days_yearly,
+#plot_snow_yearly {
+  width: 100%;
+  height: 253px;
+}
+/*# sourceMappingURL=style_jma.css.map */

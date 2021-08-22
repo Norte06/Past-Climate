@@ -1,0 +1,155 @@
+$cWhite: white;
+$cBlack: black;
+$contentMaxWidth: 1280px;
+$plotHeight: 740px;
+$controlHeight: 40px;
+
+body {
+  font-family: 'Noto Sans JP', 'Kameron', sans-serif;
+  background-color: #EEEEEE;
+  font-size: 16px;
+}
+section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+  background-color: $cWhite;
+}
+
+.intro__inner {
+  width: 100%;
+  height: 170px;
+  margin: 0 auto;
+  background-color: $cWhite;
+
+  & .menu {
+    margin: 8px auto;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  & .page_descript {
+    font-size: 1em;
+    margin: 8px 12px;
+  }
+}
+.graph__inner {
+  width: 100%;
+  height: $plotHeight;
+  margin: 0 auto;
+  background-color: $cWhite;
+  display: block;
+
+  & .graph_column{
+    float: left;
+    width: 35%;
+    height: 100%;
+
+    & .location_description{
+      height: 55px;
+      padding: 10px;
+      background-color: $cWhite;
+      font-size: 1.4em;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  & .plotly_map {
+    float: right;
+    width: 65%;
+    height: 100%;
+    background-color: $cWhite;
+    & .control-row {
+      width: 100%;
+      height: $controlHeight;
+      padding: 5px 25px;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+  }
+}
+
+.description_sec {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $cWhite;
+  display: block;
+
+  & .description__inner{
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 10px 10px 10px;
+  }
+  & .description {
+    padding-bottom: 12px;
+  }
+}
+
+.footer_sec {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #303030;
+  color: $cWhite;
+
+  & .footer__inner {
+    margin: 0px auto;
+    padding: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & .author, .github {
+      width: 25%;
+      padding-top: 5px;
+      text-align: center;
+    }
+
+    & .copyright {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 auto;
+      text-align: center;
+      color: #9b9b9b;
+      font-size: 0.8em;
+    }
+  }
+
+  & a {
+    color: #A9F5F2;
+    & :hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#plot_map {
+  width: 100%;
+  height: $plotHeight - $controlHeight;
+  margin: 0px auto;
+  padding: 0px auto;
+}
+#plot_temp_stripe {
+  width: 100%;
+  height: 130px;
+}
+#plot_temp_yearly,
+#plot_temp_monthly {
+  width: 100%;
+  height: 270px;
+}
+
