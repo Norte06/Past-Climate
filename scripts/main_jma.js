@@ -8,8 +8,8 @@ const Ny5 = years5.length;
 
 var loc_name = "Kyoto";
 var loc_name_jp = "京都";
-var fname_yearly = "/data/JMA/" + loc_name + "_yearly.csv"
-var fname_monthly = "/data/JMA/" + loc_name + "_monthly.csv"
+var fname_yearly = "../data/JMA/" + loc_name + "_yearly.csv"
+var fname_monthly = "../data/JMA/" + loc_name + "_monthly.csv"
 
 function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -29,7 +29,7 @@ function calc_climatology_5year(data,N){
 };
 
 
-const loc_data = "/data/JMA/Locations.csv";
+const loc_data = "../data/JMA/Locations.csv";
 Plotly.d3.csv(loc_data, function(err,rows){
   function plot_map(){
     const data_map = [{
@@ -435,8 +435,8 @@ Plotly.d3.csv(loc_data, function(err,rows){
     loc_name = loc_list.slice(pt_id,pt_id+1).toString();
     loc_name_jp = locjp_list.slice(pt_id,pt_id+1).toString();
 
-    fname_yearly = "/data/JMA/" + loc_name + "_yearly.csv"
-    fname_monthly = "/data/JMA/" + loc_name + "_monthly.csv"
+    fname_yearly = "../data/JMA/" + loc_name + "_yearly.csv"
+    fname_monthly = "../data/JMA/" + loc_name + "_monthly.csv"
     // console.log(loc_name_jp);
     // console.log(fname_yearly);
 
