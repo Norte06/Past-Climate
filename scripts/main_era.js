@@ -284,9 +284,12 @@ Plotly.d3.csv(data_fname, function(err,rows){
 
   let yearSelector = document.getElementById('select_year');
   let monthSelector = document.getElementById('select_month');
+
   assignOptions(years, yearSelector);
   assignOptions(months, monthSelector);
-  // monthSelector.options[0].selected = True;
+  yearSelector.options[Ny-1].selected = true;
+  monthSelector.options[0].selected = true;
+
   yearSelector.addEventListener('change', updateDate, false);
   monthSelector.addEventListener('change', updateDate, false);
 
