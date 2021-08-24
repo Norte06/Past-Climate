@@ -79,7 +79,7 @@ Plotly.d3.csv(data_fname, function(err,rows){
         y: 0.98,
       },
     };
-    const myToken = "pk.eyJ1Ijoibm90aWNhMDYiLCJhIjoiY2tnZG5lbG9kMHE4MjJ1bXdlZ2Y3OGFoZiJ9.JyR6mvaJ5qeQTzN1dcsn5A";
+    const myToken = "pk.eyJ1Ijoibm90aWNhMDYiLCJhIjoiY2tzb3VvcGl5MTJkaDJycDdqcmZ2MGd1bSJ9.T_3eHSj2H0kby2G8I3cAWQ";
     const config_map = {
       mapboxAccessToken: myToken,
       responsive: true,
