@@ -41,19 +41,12 @@ Plotly.d3.csv(loc_data, function(err,rows){
       marker: { color: "#FFB11B", size: 7 },
       hoverinfo: 'text'
     }];
+    const mapbox_style = "mapbox://styles/notica06/cknd84i1t0dl517o7e7ask0b7";
     const layout_map = {
       mapbox: {
-        style: "white-bg", 
-        center: {lon: 134.5, lat: 35.5}, 
+        style: mapbox_style, 
+        center: {lon: 139, lat: 35.5}, 
         zoom: 3.2,
-        layers: [
-          {
-            sourcetype: "raster",
-            source: ["https://tile.mierune.co.jp/mierune/{z}/{x}/{y}.png"],
-            below: "traces",
-            sourceattribution: "Maptiles by <a href='http://mierune.co.jp/' target='_blank'>MIERUNE</a>",
-          }
-        ],
       },
       title: {
         font: {size: 18},
@@ -62,7 +55,9 @@ Plotly.d3.csv(loc_data, function(err,rows){
       },
       margin: {l:30,r:30,t:40,b:20},
     };
+    const myToken = "pk.eyJ1Ijoibm90aWNhMDYiLCJhIjoiY2tnZG5lbG9kMHE4MjJ1bXdlZ2Y3OGFoZiJ9.JyR6mvaJ5qeQTzN1dcsn5A";
     const config_map = {
+      mapboxAccessToken: myToken,
       responsive: true,
       displayModeBar: false,
     };

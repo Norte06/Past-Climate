@@ -56,6 +56,8 @@ Plotly.d3.csv(data_fname, function(err,rows){
       geojson: geojson_url,
       locations: unpack(rows,'fips'),
       z: temp_Data,
+      zmax: 30,
+      zmin: -15,
       colorscale: "Portland",
       hovertemplate: '気温: %{z:.1f}˚C<extra></extra>',
       marker: {line:{width:0}, opacity:0.6},
@@ -63,29 +65,27 @@ Plotly.d3.csv(data_fname, function(err,rows){
         title:{text: "月平均気温[˚C]", side: "right", font:{size:16}}
       },
     }];
+    const mapbox_style = "mapbox://styles/notica06/cknd84i1t0dl517o7e7ask0b7";
     const layout_map = {
       mapbox: {
-        style: "white-bg", 
+        style: mapbox_style, 
         center: {lon: 134.5, lat: 35.5}, 
-        zoom: 3.8,
-        layers: [
-          {
-            sourcetype: "raster",
-            source: ["https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"],
-            below: "traces",
-            opacity: 0.82,
-            sourceattribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>",
-          }
-        ],
+        zoom: 3.8
       },
+      margin: {l:30,r:30,t:45,b:10},
       title: {
         font: {size: 18},
         text: "月平均気温",
         y: 0.98,
       },
-      margin: {l:30,r:30,t:45,b:10},
     };
-    Plotly.newPlot('plot_map', data_map, layout_map, config_graph);
+    const myToken = "pk.eyJ1Ijoibm90aWNhMDYiLCJhIjoiY2tnZG5lbG9kMHE4MjJ1bXdlZ2Y3OGFoZiJ9.JyR6mvaJ5qeQTzN1dcsn5A";
+    const config_map = {
+      mapboxAccessToken: myToken,
+      responsive: true,
+      displayModeBar: false,
+    };
+    Plotly.newPlot('plot_map', data_map, layout_map, config_map);
   };
 
   //////////////////////////////////////////////
