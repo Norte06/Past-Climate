@@ -1,4 +1,4 @@
-const Ny = 40;
+const Ny = 41;
 const Nm = 12;
 const years = Array.from(new Array(Ny)).map((v,i) => 1981 + i);
 const months = Array.from(new Array(Nm)).map((v,i) => 1 + i);
@@ -6,6 +6,7 @@ const months = Array.from(new Array(Nm)).map((v,i) => 1 + i);
 const years5 = ['1983-06','1988-06','1993-06','1998-06','2003-06','2008-06','2013-06','2018-06'];
 const Ny5 = years5.length;
 const data_url = "https://raw.githubusercontent.com/Norte06/Past-Climate/master/data/ERA5/"
+// const data_url = "../data/ERA5/"
 
 const config_graph = {
   responsive: true,
@@ -37,7 +38,7 @@ function calc_climatology_5year(data,N){
   return clim;
 };
 
-const data_fname = data_url + 'temp_monthly_1981-2020_0p1deg_japan.csv';
+const data_fname = data_url + 'temp_monthly_1981-2021_0p1deg_japan.csv';
 
 Plotly.d3.csv(data_fname, function(err,rows){
   const row_keys = Object.keys(rows[0]);
@@ -86,6 +87,7 @@ Plotly.d3.csv(data_fname, function(err,rows){
       displayModeBar: false,
     };
     Plotly.newPlot('plot_map', data_map, layout_map, config_map);
+    console.log(chosenMonth);
   };
 
   //////////////////////////////////////////////
@@ -94,8 +96,8 @@ Plotly.d3.csv(data_fname, function(err,rows){
 
   function plotWarmingStrips(ind) {
     const pointdata = Object.values(rows[ind]);
-    const Nt = pointdata.length;
-    const timeseries = pointdata.slice(1,Nt).map(Number);
+    const Nt = pointdata.length-1;
+    const timeseries = pointdata.slice(0,Nt).map(Number);
     const clim_1year = calc_climatology(timeseries,Ny);
     const y_con = new Array(Ny).fill(1);
 
@@ -146,9 +148,9 @@ Plotly.d3.csv(data_fname, function(err,rows){
 
   function plot_temp_yearly(ind) {
     const pointdata = Object.values(rows[ind]);
-    const Nt = pointdata.length;
+    const Nt = pointdata.length-1;
 
-    const timeseries = pointdata.slice(1,Nt).map(Number);
+    const timeseries = pointdata.slice(0,Nt).map(Number);
     const clim_1year = calc_climatology(timeseries,Ny);
     const clim_5year = calc_climatology_5year(timeseries,Ny5);
 
@@ -193,8 +195,8 @@ Plotly.d3.csv(data_fname, function(err,rows){
 
   function plot_temp_monthly(ind) {
     const pointdata = Object.values(rows[ind]);
-    const Nt = pointdata.length;
-    const timeseries = pointdata.slice(1,Nt).map(Number);
+    const Nt = pointdata.length-1;
+    const timeseries = pointdata.slice(0,Nt).map(Number);
 
     const monthly_ave = new Array();
     for (let i = 0; i < Nm; i++){
@@ -236,7 +238,7 @@ Plotly.d3.csv(data_fname, function(err,rows){
   }
 
   function clicked_loc(lon,lat){
-    const loc_str = '東経:' + lon.toFixed(2) + ',　北緯:' + lat.toFixed(2);
+    const loc_str = '東経:' + lon.toFixed(2) + ', 北緯:' + lat.toFixed(2);
     document.getElementById("location_str").textContent=loc_str;
   }
 
@@ -256,7 +258,7 @@ Plotly.d3.csv(data_fname, function(err,rows){
   //////////////////////////////////////////////
 
   const id_1st = 2707;  // 北緯34.99, 東経135.79
-  plot_map('1981-01');
+  plot_map('202101');
   clicked_loc(135.79,34.99);
   plot_temp_yearly(id_1st);
   plot_temp_monthly(id_1st);
@@ -276,7 +278,7 @@ Plotly.d3.csv(data_fname, function(err,rows){
   function updateDate(){
     let year_str = String(yearSelector.value);
     let month_str = ('0' + monthSelector.value).slice(-2);
-    let date_str = year_str + '-' + month_str;
+    let date_str = year_str + month_str;
     console.log(date_str);
     plot_map(date_str);
     mapClick();

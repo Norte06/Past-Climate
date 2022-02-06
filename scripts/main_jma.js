@@ -1,12 +1,13 @@
-const Ny = 40;
+const Ny = 41;
 const Nm = 12;
 const years = Array.from(new Array(Ny)).map((v,i) => 1981 + i);
 const months = Array.from(new Array(Nm)).map((v,i) => 1 + i);
 
-const years5 = ["1983","1988","1993","1998","2003","2008","2013","2018"];
+const years5 = ["1984","1989","1994","1999","2004","2009","2014","2019"];
 const Ny5 = years5.length;
 
-const data_url = "https://raw.githubusercontent.com/Norte06/Past-Climate/master/data/JMA/"
+// const data_url = "https://raw.githubusercontent.com/Norte06/Past-Climate/master/data/JMA/"
+const data_url = "../data/JMA/"
 var loc_name = "Kyoto";
 var loc_name_jp = "京都";
 var fname_yearly = data_url + loc_name + "_yearly.csv"
