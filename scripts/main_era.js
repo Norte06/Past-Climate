@@ -3,7 +3,7 @@ const Nm = 12;
 const years = Array.from(new Array(Ny)).map((v,i) => 1981 + i);
 const months = Array.from(new Array(Nm)).map((v,i) => 1 + i);
 
-const years5 = ['1983-06','1988-06','1993-06','1998-06','2003-06','2008-06','2013-06','2018-06'];
+const years5 = ['1984-06','1989-06','1994-06','1999-06','2004-06','2009-06','2014-06','2019-06'];
 const Ny5 = years5.length;
 const data_url = "https://raw.githubusercontent.com/Norte06/Past-Climate/master/data/ERA5/"
 // const data_url = "../data/ERA5/"
@@ -31,7 +31,7 @@ function calc_climatology(data,N){
 };
 function calc_climatology_5year(data,N){
   let clim = new Array();
-  for(let i = 0; i < N; i++){
+  for(let i = 1; i <= N; i++){
     const j = i * 60;
     clim.push(average(data.slice(j,j+60)));
   }
@@ -87,7 +87,7 @@ Plotly.d3.csv(data_fname, function(err,rows){
       displayModeBar: false,
     };
     Plotly.newPlot('plot_map', data_map, layout_map, config_map);
-    console.log(chosenMonth);
+    // console.log(chosenMonth);
   };
 
   //////////////////////////////////////////////
